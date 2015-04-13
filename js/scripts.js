@@ -1,27 +1,27 @@
 $(document).ready(function() {
-    $("form#new-contact").submit(function(event) {
+    $("form#add").submit(function(event) {
         event.preventDefault();
 
-        var inputtedFirstName = $("input#new-first-name").val();
-        var inputtedLastName = $("input#new-last-name").val();
-        var inputtedAddress = $("input#new-address").val();
-        var newContact = { firstName:inputtedFirstName, lastName: inputtedLastName, address:inputtedAddress };
+        var inputLocation = $("input#location").val();
+        var inputTime = $("input#time").val();
+        var inputNotes = $("textarea#notes").val();
 
-        $("ul#contacts").append("<li><span class='contact'>" + newContact.firstName + " " + newContact.lastName + "</span></li>");
+        var newPlace = { location: inputLocation, time: inputTime, notes: inputNotes };
 
-        $('input#new-first-name').val('');
-        $('input#new-last-name').val('');
-        $('input#new-address').val('');
+        $("ul.places").append("<li><span class='place'>" + newPlace.location + "</span></li>");
 
+        $('input#location').val("");
+        $('input#time').val("");
+        $('textarea#notes').val("");
 
-        $('.contact').last().click(function() {
-        $('#show-contact').show();
-        $('#show-contact h2').text(newContact.firstName + ' ' + newContact.lastName);
-        $('.first-name').text(newContact.firstName);
-        $('.last-name').text(newContact.lastName);
-        $('.address').text(newContact.address);
+        $('.place').last().click(function() {
+        $('#selected').show();
+        $('#selected h2').text(newPlace.location);
+        $('.location-display').text(newPlace.location);
+        $('.time-display').text(newPlace.time);
+        $('.notes-display').text(newPlace.notes);
 
-        });
+    });
 
     });
 });

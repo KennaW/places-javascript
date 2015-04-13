@@ -1,53 +1,46 @@
-<!DOCTYPE html>
 <html>
-  <head>
-      <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-1.11.2.js"></script>
-    <script src="js/scripts.js"></script>
-    <title>Address book</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Address book</h1>
+    <head>
+        <title>Places</title>
+        <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
+        <script src="js/jquery-1.11.2.js"></script>
+        <script src="js/scripts.js"></script>
+    </head>
+    <body>
 
-      <div class="row">
+        <div class='container'>
 
-          <div class="col-md-6">
-              <div id="show-contact">
+            <div id="selected">
                 <h2></h2>
-
-                <p>First name: <span class="first-name"></span></p>
-                <p>Last name: <span class="last-name"></span></p>
-                <p>Address: <span class="address"></span></p>
-              </div>
-            </div>
-          
-        <div class="col-md-6">
-          <h2>Add a contact:</h2>
-          <form id="new-contact">
-            <div class="form-group">
-              <label for="new-first-name">First name</label>
-              <input type="text" class="form-control" id="new-first-name">
-            </div>
-            <div class="form-group">
-              <label for="new-last-name">Last name</label>
-              <input type="text" class="form-control" id="new-last-name">
-            </div>
-            <div class="form-group">
-              <label for="new-address">Address</label>
-              <input type="text" class="form-control" id="new-address">
+                <h4>Location : <span class='location-display'></span></h4>
+                <h4>Time : <span class='time-display'></span></h4> 
+                <h4>Notes : <span class='notes-display'></span></h4>
             </div>
 
-            <button type="submit" class="btn">Add</button>
-          </form>
+            <form id="add">
+                <h2>Add a new place</h2>
+                <div id="new">
+                    <label for="location">Enter a new location :</label>
+                    <input type="text" id='location'> <br>
+                    <label for="time">The time of your visit :</label>
+                    <input type="text" id='time'> <br>
+                    <label for="notes">Leave a notes about it :</label> <br>
+                    <textarea id='notes' rows="8" cols="40"></textarea>
+                </div>
 
-          <h2>Contacts:</h2>
-          <ul id="contacts">
+                <button type="submit" class='btn btn-success'>Add it</button>
+            </form>
 
-          </ul>
+
+
+            <div id="list-of-places">
+                <ul class='places'>
+
+                </ul>
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </body>
+
+    </body>
 </html>
